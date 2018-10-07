@@ -285,7 +285,7 @@ echo "$day's coffee is $coffee and the color is $color"
       <h1 class="weekday"><? echo $day; ?>’S SPECIAL</h1>
       <div class="text-box">
           <h1 class="text-box-title">PUMPKIN SPICE</h1>
-          <p>Spice up your Monday with premium cup of pumpkin spice.</p>
+          <p>Spice up your <? echo $day; ?> with premium cup of pumpkin spice.</p>
           <button class="btn1">TRY</button>
           <button class="btn2">LEARN MORE</button>
       </div>
