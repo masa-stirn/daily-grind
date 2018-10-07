@@ -1,6 +1,5 @@
 <?php
 $day = date('l');
-
 switch($day){
     case 'Monday':
     $coffee = "Pumpkin spice";
@@ -58,62 +57,6 @@ switch($day){
     $alt = "yummy rose coffee";   
     break;
 }
-
-/*
-if(Monday)
-{//Pumpkin spice, orange
-    echo '
-        <nav style="color:orange"></nav>
-        <p style="color:orange">
-        Good morning! We love orange!!
-        </p> 
-        ';
-}elseif(Tuesday){
-//Creamy latte, dark blue
-        echo '
-        <p style="color:red">
-        Good afternon! 
-        </p>
-        ';
-}elseif(Wednesday){
-//Minty sip, green
-        echo '
-        <p style="color:blue">
-        Good evening! 
-        </p>
-        ';
-}elseif(Thursday){
-//Espresso mind, brown
-        echo '
-        <p style="color:blue">
-        Good evening! 
-        </p>
-        ';
-}elseif(Friday){
-//Ice latte, viola
-        echo '
-        <p style="color:blue">
-        Good evening! 
-        </p>
-        ';
-}elseif(Saturday){
-//Drip is hip, blue
-        echo '
-        <p style="color:blue">
-        Good evening! 
-        </p>
-        ';
-}else{
-//Rose espresso, pink
-        echo '
-        <p style="color:magenta">
-        Good night! 
-        </p>
-        ';
-}
-
-echo "$day's coffee is $coffee and the color is $color"
-*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -133,8 +76,8 @@ echo "$day's coffee is $coffee and the color is $color"
         }
         .hero-image{
             position: absolute;
-            max-width: 80vw;
-            top: 25px;
+            width: 80vw;
+            padding-top: 25px;
             left:0;
             right: 0;
             margin: auto;
@@ -154,7 +97,7 @@ echo "$day's coffee is $coffee and the color is $color"
             height: inherit;
             justify-content: space-evenly;
             max-width: 70vw;
-            margin-left: 30px; 
+            margin-left: 50px; 
         }
         nav li {
             list-style: none;
@@ -192,6 +135,10 @@ echo "$day's coffee is $coffee and the color is $color"
             display: flex;
             width: 25px;
             flex-direction: row;
+        }
+        .icons:hover {
+            opacity: 0.8;
+            cursor: pointer;
         }
         .weekday {
             font-family: big-john;
@@ -244,11 +191,11 @@ echo "$day's coffee is $coffee and the color is $color"
         .btn1{
             background-color: <? echo $color; ?>;
             color: #fff;
-            border: 1px solid #fff;    
+            border: 1px solid transparent;        
         }
         .btn1:hover{
             background-color: #fff;
-            border: none;
+            border: 1px solid transparent;    
             color: <? echo $color; ?>;
         }
         .btn2{
@@ -260,6 +207,55 @@ echo "$day's coffee is $coffee and the color is $color"
             background-color: <? echo $color; ?>;
             color: #fff;
             border: none;
+        }
+        @media screen and (max-width: 1150px) {
+            .text-box {
+                bottom: 30%;
+            }
+        }
+        @media screen and (max-width: 800px) {
+            .text-box {
+                bottom: 60vh;
+                top: 100px;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+            .hero-image {
+                bottom: 0;
+                width: 100vw;
+            }
+            nav {
+                top:0;
+                width: 100vw;
+            }
+            .icon-box {
+                top: 90vh;
+                
+            }
+            .weekday {
+                top: 90vh;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            nav ul {
+                flex-direction: row;
+                margin-left: 10vw;
+                height: max-content;
+                margin-top: 18%;
+                max-width: 80vw;
+            }
+            nav li {
+                color: <? echo $color; ?>;
+                text-decoration: underline;
+                font-weight: 400;
+                margin-left: 10px;
+                margin-top: 15px;
+            }
+            .text-box {
+                bottom: 200px;
+                background-color: transparent;
+            }
         }
     </style>
 </head>
