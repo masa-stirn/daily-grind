@@ -265,7 +265,7 @@ echo "$day's coffee is $coffee and the color is $color"
 </head>
 
 <body>
-  <img class="hero-image" src="images/pumpkin-spice-coffee.jpg" alt="Pumpkin spice coffee.">
+  <img class="hero-image" src="images/<? echo $img; ?>" alt="<? echo $alt; ?>">
    <nav>
        <img class="logo" src="images/coffee-bean-logo-white.png" alt="Our coffee beans logo.">
        <ul>
