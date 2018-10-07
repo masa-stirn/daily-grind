@@ -4,7 +4,7 @@ $day = date('l');
 switch($day){
     case 'Monday':
     $coffee = "Pumpkin spice";
-    $bgcolor = "RGBA(245,180,75,0.8)";
+    $bgColor = "RGBA(245,180,75,0.8)";
     $color = "#F5B44B";
     $img = "pumpkin-spice-coffee.jpg";
     $alt = "yummy pumpkin spice coffee";   
@@ -12,7 +12,7 @@ switch($day){
     
     case 'Tuesday':
     $coffee = "Creamy latte";
-    $bgcolor = "RGBA(41,68,110,0.8)";
+    $bgColor = "RGBA(41,68,110,0.8)";
     $color = "#29446E";
     $img = "creamy-latte.jpg";
     $alt = "yummy creamy latte coffee";   
@@ -20,7 +20,7 @@ switch($day){
        
     case 'Wednesday':
     $coffee = "Minty sip";
-    $bgcolor = "RGBA(49,154,122,0.8)";
+    $bgColor = "RGBA(49,154,122,0.8)";
     $color = "#319A7A";
     $img = "mint-chocolate-cappuchino.jpg";
     $alt = "yummy mint and chocolate coffee";   
@@ -28,7 +28,7 @@ switch($day){
        
     case 'Thursday':
     $coffee = "Espresso mind";
-    $bgcolor = "RGBA(110,101,58,0.8)";
+    $bgColor = "RGBA(110,101,58,0.8)";
     $color = "#6E653A";
     $img = "espresso.jpg";
     $alt = "yummy espresso coffee";   
@@ -36,7 +36,7 @@ switch($day){
         
     case 'Friday':
     $coffee = "Ice latte";
-    $bgcolor = "RGBA(99,41,110,0.8)";
+    $bgColor = "RGBA(99,41,110,0.8)";
     $color = "#63296E";
     $img = "icey-latte.jpg";
     $alt = "yummy ice latte coffee";
@@ -44,7 +44,7 @@ switch($day){
     
     case 'Saturday':
     $coffee = "Drip is hip";
-    $bgcolor = "RGBA(69,186,221,0.8)";
+    $bgColor = "RGBA(69,186,221,0.8)";
     $color = "#45BADD";
     $img = "drip-coffee.jpg";
     $alt = "yummy drip coffee coffee";   
@@ -52,7 +52,7 @@ switch($day){
     
     case 'Sunday':
     $coffee = "ROSE ESPRESSO";
-    $bgcolor = "RGBA(191,113,113,0.8)";
+    $bgColor = "RGBA(191,113,113,0.8)";
     $color = "#BF7171";
     $img = "rose-coffee.jpg";
     $alt = "yummy rose coffee";   
@@ -266,7 +266,7 @@ echo "$day's coffee is $coffee and the color is $color"
 
 <body>
   <img class="hero-image" src="images/<? echo $img; ?>" alt="<? echo $alt; ?>">
-   <nav>
+   <nav style="background-color:<? echo $bgColor; ?>">
        <img class="logo" src="images/coffee-bean-logo-white.png" alt="Our coffee beans logo.">
        <ul>
            <li>COFFEE</li>
@@ -284,7 +284,7 @@ echo "$day's coffee is $coffee and the color is $color"
    <div>
       <h1 class="weekday"><? echo $day; ?>’S SPECIAL</h1>
       <div class="text-box">
-          <h1 class="text-box-title"><? echo $coffee; ?></h1>
+          <h1 style="color:<? echo $color; ?>" class="text-box-title"><? echo $coffee; ?></h1>
           <p>Spice up your <? echo $day; ?> with premium cup of pumpkin spice.</p>
           <button class="btn1">TRY</button>
           <button class="btn2">LEARN MORE</button>
