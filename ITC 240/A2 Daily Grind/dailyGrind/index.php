@@ -242,22 +242,22 @@ echo "$day's coffee is $coffee and the color is $color"
             width: 120px;
         }
         .btn1{
-            background-color: RGB(245,180,75);
+            background-color: <? echo $color; ?>;
             color: #fff;
             border: 1px solid #fff;    
         }
         .btn1:hover{
             background-color: #fff;
             border: none;
-            color: RGB(245,180,75);
+            color: <? echo $color; ?>;
         }
         .btn2{
             background-color: #fff;
-            border: 1px solid RGB(245,180,75);
-            color: RGB(245,180,75);
+            border: 1px solid <? echo $color; ?>;
+            color: <? echo $color; ?>;
         }
         .btn2:hover{
-            background-color: RGB(245,180,75);
+            background-color: <? echo $color; ?>;
             color: #fff;
             border: none;
         }
@@ -286,8 +286,8 @@ echo "$day's coffee is $coffee and the color is $color"
       <div class="text-box">
           <h1 style="color:<? echo $color; ?>" class="text-box-title"><? echo $coffee; ?></h1>
           <p>Spice up your <? echo $day; ?> with premium cup of pumpkin spice.</p>
-          <button style="background-color:<? echo $color; ?>; border:none;" class="btn1">TRY</button>
-          <button style="color:<? echo $color; ?>; border:1px solid <? echo $color; ?>;" class="btn2">LEARN MORE</button>
+          <button class="btn1">TRY</button>
+          <button class="btn2">LEARN MORE</button>
       </div>
        
    </div>
