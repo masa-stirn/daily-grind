@@ -1,4 +1,11 @@
 <?php
+   
+session_start();
+$timezone = $_SESSION['time'];
+
+echo "The time is " . date("h:i:sa");
+print $_SESSION;
+
 $day = date('l');
 switch($day){
     case 'Monday':
@@ -65,6 +72,23 @@ switch($day){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simply Coffee</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        if("<?php echo $timezone; ?>".length==0){
+            var visitortime = new Date();
+            var visitortimezone = "GMT " + -visitortime.getTimezoneOffset()/60;
+            $.ajax({
+                type: "GET",
+                url: "http://masawudesign.dk/itc240/dailyGrind//timezone.php",
+                data: 'time='+ visitortimezone,
+                success: function(){
+                    location.reload();
+                }
+            });
+        }
+    });
+</script>
     <style>
         @font-face {
         font-family: big-john;
@@ -103,7 +127,7 @@ switch($day){
             list-style: none;
             color: #fff;
             font-family: 'Lato', sans-serif;
-            font-size: 15;
+            font-size: 15px;
             font-weight: 100;
             display: inline-block;
             margin-left: 40px;
@@ -208,6 +232,16 @@ switch($day){
             color: #fff;
             border: none;
         }
+        footer {
+            position: fixed;
+            bottom:0;
+            left:0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+        }
         @media screen and (max-width: 1150px) {
             .text-box {
                 bottom: 30%;
@@ -287,5 +321,6 @@ switch($day){
       </div>
        
    </div>
+   <footer>Designed by Masa Wu&copy;2018</footer>
 </body>
 </html>
