@@ -1,10 +1,10 @@
 <?php
    
-session_start();
-$timezone = $_SESSION['time'];
-
-echo "The time is " . date("h:i:sa");
-print $_SESSION;
+//session_start();
+//$timezone = $_SESSION['time'];
+//
+//echo "The time is " . date("h:i:sa");
+//print $_SESSION;
 
 $day = date('l');
 switch($day){
@@ -72,10 +72,11 @@ switch($day){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simply Coffee</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript">
+<!--    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>-->
+<!--
+<script type="text/javascript">
     $(document).ready(function() {
-        if("<?php echo $timezone; ?>".length==0){
+        if("<?=$timezone;?>".length==0){
             var visitortime = new Date();
             var visitortimezone = "GMT " + -visitortime.getTimezoneOffset()/60;
             $.ajax({
@@ -89,6 +90,7 @@ switch($day){
         }
     });
 </script>
+-->
     <style>
         @font-face {
         font-family: big-john;
